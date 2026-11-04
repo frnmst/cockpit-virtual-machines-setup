@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling >= 1.30"]
+build-backend = "hatchling.build"
+
+[project]
+name = "basic-repo-template"
+version = "0.1.0"
+authors = [
+    { name = "Franco Masotti" },
+]
+description = "Placeholder"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICEN[CS]ES/*.txt"]
+requires-python = ">=3.13"
+dependencies = [
+    "pre-commit>=4,<5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pip-tools",
+    "pip-audit",
+    "build",
+    "twine",
+    "hatchling",
+]
+
+# Non-Python package repositories: do not include anything in the package.
+[tool.hatch.build]
+include = []
+
+[tool.hatch.build.targets.sdist]
+reproducible = true
+
+[tool.hatch.build.targets.wheel]
+bypass-selection = true
+reproducible = true
+
+[tool.commitizen]
+name = "cz_gitmoji"

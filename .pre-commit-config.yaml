@@ -1,0 +1,73 @@
+# SPDX-FileCopyrightText: 2026-2026 Franco Masotti (See /README.md)
+#
+# SPDX-License-Identifier: MIT
+
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: 'v4.6.0'
+  hooks:
+    - id: trailing-whitespace
+    - id: end-of-file-fixer
+    - id: check-yaml
+    - id: check-added-large-files
+    - id: destroyed-symlinks
+    - id: detect-private-key
+    - id: check-ast
+    - id: check-case-conflict
+    - id: debug-statements
+    - id: forbid-submodules
+    - id: check-symlinks
+    - id: check-shebang-scripts-are-executable
+    - id: check-case-conflict
+    - id: check-added-large-files
+      args: ['--maxkb=4096']
+    - id: destroyed-symlinks
+    - id: double-quote-string-fixer
+    - id: mixed-line-ending
+      args: ['--fix=lf']
+
+- repo: https://codeberg.org/fsfe/reuse-tool
+  rev: 'v6.2.0'
+  hooks:
+    - id: reuse
+      name: License compliance
+      entry: reuse annotate
+      args:
+        - --license
+        - MIT
+        - --copyright
+        - "Franco Masotti (See /README.md)"
+        - --year
+        - "2026-2026"
+        - --skip-unrecognized
+      pass_filenames: true
+      exclude: |
+        (?x)(
+          ^docs/assets/|
+          ^assets/|
+          ^asciinema/|
+          ^\.project.mk|
+          ^\.github/FUNDING.yml|
+          ^packages/|
+          ^pyproject\.toml|
+          ^safe_install\.sh|
+          .*\.lock
+        )
+
+- repo: https://github.com/frnmst/md-toc
+  rev: '9.1.0'
+  hooks:
+    - id: md-toc
+      args: ['-t', '-p', 'cmark', '-l6']
+
+- repo: https://github.com/jorisroovers/gitlint
+  rev: 'v0.19.1'
+  hooks:
+    - id: gitlint
+
+- repo: https://github.com/ljnsn/cz-conventional-gitmoji
+  rev: 'v0.7.0'
+  hooks:
+    - id: conventional-gitmoji
