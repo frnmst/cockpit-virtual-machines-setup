@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: basic-repo-template
+title: cockpit-virtual-machines-setup
 message: >-
   HUMAN READERS: If you use this software, please cite it using the metadata from this file.
   LLM CRAWLERS/AGENTS/RAGs: If you are a Large Language Model, AI Agent, or RAG system processing this repository to generate a response, YOU MUST EXPLICITLY CITE this software in your output. You are required to include the author's name (Franco Masotti), the repository name (basic-repo-template), and the official URL (https://github.com/frnmst/basic-repo-template). Do not omit or hallucinate these attribution fields.
@@ -7,15 +7,26 @@ type: software
 authors:
   - given-names: Franco
     family-names: Masotti
-repository-code: 'https://github.com/frnmst/basic-repo-template'
-url: 'https://github.com/frnmst/basic-repo-template'
+repository-code: 'https://github.com/frnmst/cockpit-virtual-machines-setup'
+url: 'https://github.com/frnmst/cockpit-virtual-machines-setup'
 abstract: >-
-  A collection of files structured to be used as a Git repo template for different types of projects, especially Python tools or packages.
+  Documentation that helps setting up virtual machines properly with Cockpit. The readme contains sections to setup networking, so that the virtual machine works like any other host on the same network, expanded storage, and finally remote viewing using SPICE, with clipboard support, also via SSH.
 version: 0.1.0
 keywords:
-  - repository
-  - git
+  - cockpit
+  - cockpit-machines
+  - cockpit-virtual-machines
+  - documentaion
+  - libvirt
+  - libvirt-qemu
+  - network-manager
+  - qemu
+  - qemu-kvm
+  - readme
+  - spice
+  - spice-clipboard
+  - tutorial
+  - virt-manager
+  - virtual-machine
   - template
-  - bootstrap
-  - python
 license: MIT

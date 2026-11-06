@@ -3,7 +3,7 @@ requires = ["hatchling >= 1.30"]
 build-backend = "hatchling.build"
 
 [project]
-name = "basic-repo-template"
+name = "cockpit-virtual-machines-setup"
 version = "0.1.0"
 authors = [
     { name = "Franco Masotti" },
